@@ -1,0 +1,10 @@
+---
+
+- hosts: jboss-servers
+  remote_user: root
+
+  tasks:
+  - name: update Linux systems
+    command: yum -y update exclude=kernel
+    when: ansible_os_family == "RedHat"
+
